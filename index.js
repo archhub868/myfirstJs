@@ -1,17 +1,34 @@
-function subtract(a, b) {
-   
-    return  a - b;
- 
-}
- let a = prompt("Enter the value of a");
- let b = prompt("Enter the value of b");
-console.log(subtract(a,b))
+var list = [];
 
-//break;
-//calculating the area of a circle
-const getRectArea = function(width, length){
-  return width * length;
+for (var i = 0; i < 1000; i++) list.push(i);
+
+var start = new Date;
+
+nextListItem();
+
+function nextListItem() {
+    var item = list.pop();
+
+    if (item) {
+        console.log(item);
+        setTimeout(nextListItem, 0);
+    } else console.log(new Date - start);
 }
-let width = prompt("Enter the width");
-let length = prompt("Enter the length"); 
-console.log(getRectArea(width,length));
+
+var list = [];
+
+for (var i = 0; i < 1000; i++) list.push(i);
+
+var start = new Date;
+
+nextListItem();
+
+function nextListItem() {
+    var item = list.pop();
+
+    if (item) {
+        console.log(item);
+        if (item % 100) nextListItem();
+        else setTimeout(nextListItem, 0);
+    } else console.log(new Date - start);
+}
